@@ -1,9 +1,21 @@
-import * as React from "react";
+import { useEffect } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 interface HomeProps {}
 
 const Home = (props: HomeProps) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (false) {
+      router.push("/home/carouselScreen");
+    }
+    console.log("Home mounted");
+    return () => {
+      console.log("Home unmounted");
+    };
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text>Home</Text>
@@ -11,6 +23,7 @@ const Home = (props: HomeProps) => {
         Push settings
       </Link>
       <Link href="/home/modal">modal page</Link>
+      <Link href="/home/tripScreen">trip page</Link>
     </View>
   );
 };

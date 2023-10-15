@@ -1,23 +1,22 @@
 import { Stack } from "expo-router";
-import { Platform } from "react-native";
 
 const StackLayout = () => {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerTitle: "Home Screen" }} />
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        presentation: "transparentModal",
+        animation: "slide_from_bottom",
+      }}
+    >
       <Stack.Screen
-        name="modal"
-        options={{
-          presentation: "modal",
-        }}
-      />
-      <Stack.Screen
-        name="carouselScreen"
+        name="index"
         options={{
           presentation: "transparentModal",
           gestureDirection: "vertical",
           animation: "slide_from_bottom",
           gestureEnabled: true,
+          fullScreenGestureEnabled: true,
         }}
       />
     </Stack>
