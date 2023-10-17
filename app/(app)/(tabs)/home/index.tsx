@@ -6,15 +6,15 @@ interface HomeProps {}
 const Home = (props: HomeProps) => {
   const router = useRouter();
 
-  useEffect(() => {
-    if (false) {
-      router.push("/home/carouselScreen");
-    }
-    console.log("Home mounted");
-    return () => {
-      console.log("Home unmounted");
-    };
-  }, []);
+  // useEffect(() => {
+  //   if (false) {
+  //     router.push("/home/carouselScreen");
+  //   }
+  //   console.log("Home mounted");
+  //   return () => {
+  //     console.log("Home unmounted");
+  //   };
+  // }, []);
 
   return (
     <View style={styles.container}>
@@ -24,6 +24,7 @@ const Home = (props: HomeProps) => {
       </Link>
       <Link href="/home/modal">modal page</Link>
       <Link href="/home/tripScreen">trip page</Link>
+      <Link href="/home/signout">Sign out</Link>
     </View>
   );
 };

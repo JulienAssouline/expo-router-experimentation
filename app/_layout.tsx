@@ -1,11 +1,11 @@
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
+import { SessionProvider } from "./(app)/context/AuthContext";
 
-const StackLayout = () => {
+export default function Root() {
+  // Set up the auth context and render our layout inside of it.
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+    <SessionProvider>
+      <Slot />
+    </SessionProvider>
   );
-};
-
-export default StackLayout;
+}
